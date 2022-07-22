@@ -1,0 +1,17 @@
+.Prod{
+    height:calc(100vh - 88.50px) ; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgb(6, 155, 204), rgb(176, 255, 144));
+}
+
+.Productos{
+    height:100% ; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgb(6, 155, 204), rgb(176, 255, 144));
+}

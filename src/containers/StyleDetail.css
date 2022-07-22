@@ -1,0 +1,82 @@
+.Detalle{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 50px 50px 100px 100px;
+        grid-template-areas: "foto nombre nombre"
+                              "foto precio precio"  
+                              "foto stock stock"
+                              "foto formulario formulario"
+                              "descripcion descripcion descripcion";
+                              
+    column-gap: 10px; /*lo que hace es dar espacio entre las columnas en la grilla*/
+    row-gap: 10px; /*este lo que hace es dar espacio entre las filas*/
+    align-items: center;
+    justify-items: center;
+    padding: 30px;
+    height: calc(100vh - 148.88px);
+    background: linear-gradient(to bottom right, rgb(0, 119, 255), rgb(163, 250, 163));
+}
+
+
+
+
+
+.Nombre{
+    font-size: 25px;
+    grid-area: nombre;
+    width: 70%;
+}
+
+.Imagen{
+    width: 80%;
+    height: 100%;
+    grid-area: foto;
+    border-radius: 50px;
+}
+
+.Precio{
+    grid-area: precio;
+    font-weight: 700;
+    font-size: 25px;
+    color: rgb(0, 146, 0);
+    align-self:start;
+}
+.Formulario{
+grid-area: formulario;
+display: flex;
+align-items: center;
+
+
+}
+
+.Cantidad{
+    grid-area: input;
+    justify-self: end;
+    width: 50px;
+    border: 1px solid rgb(43, 255, 0);
+    height: 25px;
+    text-align: center;
+}
+
+.Comprar {
+    grid-area:boton_comprar ;
+    justify-self: start;
+}
+
+.Descripcion{
+    grid-area: descripcion;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 60%;
+}
+
+.Stock{
+    grid-area: stock;
+    font-weight: 700;
+    font-size: 25px;
+    align-self:start;
+}
+
+.Compra{
+    grid-area: formulario;
+}
