@@ -7,16 +7,16 @@ import './StyleCount.css'
 
 
 function ItemCount({stock, add}) {
-    const [cantidad,setCantidad] = useState(1);
+    const [cantidad,guardarCantidad] = useState(1);
 
 
 
     const aumentar=()=>{
-        cantidad < stock ? setCantidad(cantidad+1) : setCantidad(stock)  
+        cantidad < stock ? guardarCantidad(cantidad+1) : guardarCantidad(stock)  
     }
 
     const disminuir = ()=>{
-        cantidad==1 ? setCantidad(1) : setCantidad(cantidad -1)
+        cantidad==1 ? guardarCantidad(1) : guardarCantidad(cantidad -1)
 
     }
 

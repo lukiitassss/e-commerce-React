@@ -1,13 +1,15 @@
 import { useContext } from 'react'
-import img from "../../img/carritoDeCompra.svg"
+
 import './StyleCard.css'
+
+import img from "../../img/carritoDeCompra.svg"
 import {CartContext} from '../../context/CartContext'
 
 export default function CardWidget() {
 
   const [,,longitud] = useContext(CartContext)
   return (
-    <article className='cartWidget'>
+    <article className='CartWidget'>
       <img src={img} />
       {longitud()> 0 ? 
                       longitud() > 9 ? 

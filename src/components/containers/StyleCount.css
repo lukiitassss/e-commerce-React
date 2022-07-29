@@ -16,7 +16,12 @@
     border-radius: 5px;
     padding: 8px;
     margin: 5px;
-    
+    border: 5px inset rgb(69, 69, 255);
+    background-color: rgb(76, 0, 255);
+    color: aliceblue;
+}
+.Menos:hover{
+    border: 5px inset rgb(69, 187, 255); 
 }
 
 .Mas{
@@ -27,6 +32,12 @@
     border-radius: 5px;
     padding: 8px;
     margin: 5px;
+    border: 5px inset rgb(69, 69, 255);
+    background-color: rgb(76, 0, 255);
+    color: aliceblue;
+}
+.Mas:hover{
+    border: 5px inset rgb(69, 187, 255); 
 }
 
 .Cantidad{
@@ -37,8 +48,12 @@
 }
 
 .Comprar{
-    border-radius: 5px;
-    color: rgb(255, 0, 200);
+    border: 5px inset rgb(69, 69, 255);
+    background-color: rgb(76, 0, 255);
+    color: aliceblue;
+}
+.Comprar:hover{
+    border: 5px inset rgb(69, 187, 255); 
 }
 
 .Comprado{

@@ -1,0 +1,37 @@
+.Articulo{
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(90, 90, 90, 0.404);
+    margin-top: 3px;
+    width: 90%;
+}
+
+.Articulo img{
+    width: 10%;
+    height: 100%;
+}
+
+.Nombre{
+    width: 30%;
+    font-size: 20px;
+}
+
+.SubTotal{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    color: green;
+    font-weight: 700;
+}
+
+.Quitar{
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    font-size: 15px;
+    text-align: center;
+}

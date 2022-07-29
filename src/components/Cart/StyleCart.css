@@ -1,0 +1,174 @@
+.Cart{
+
+    background-color: rgb(167, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content:  space-around;
+}
+
+.Carr{
+    height: calc(100vh - 89px);
+    background-color: rgb(167, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content:  space-around;
+
+}
+
+.UnProducto{
+    width: 100%;
+    height: 90px;
+}
+
+.Vacio{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    color: brown;
+    height: calc(100vh - 289px);
+    background-color: rgb(167, 255, 255);
+}
+
+.IrAHome{
+    margin: 20px 0px;
+    border: 5px inset rgb(69, 69, 255);
+    background-color: rgb(76, 0, 255);
+    color: aliceblue;
+}
+
+.IrAHome:hover{
+    border: 5px inset rgb(69, 187, 255); 
+}
+
+.Orden{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 450px;
+    border:  3px inset purple;
+    margin-top: 20px;
+}
+.Orden button{
+    background-color: rgb(189, 221, 189);
+    color: rgba(84, 88, 88, 0.5);
+    border-radius: 5px;
+    width: 50%;
+    margin: 10px 0px;
+}
+
+
+.Orden button:hover{
+    color: white;
+    background-color: rgb(46, 46, 46);
+}
+
+.Orden input{
+    margin: 10px 0px;
+    width: 45%;
+    height: 20px;
+    text-align: center;
+    border-radius: 1px;
+    font-weight: 600;
+
+}
+
+.Orden span{
+    margin-bottom: 35px;
+    font-size: 25px;
+    font-weight: 900;
+
+}
+
+
+
+
+
+
+
+.ProductosCarrito{
+    margin-top: 20px;
+    width: 60%; 
+}
+
+.Limpiar{
+    margin: 20px 0px;
+    border: 5px inset rgb(69, 69, 255);
+    background-color: rgb(76, 0, 255);
+    color: aliceblue;
+}
+
+.Limpiar:hover{
+    border: 5px inset rgb(69, 187, 255);
+}
+
+.TotalLimpiar{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px;
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+    color: rgb(0, 151, 151);
+    font-weight: 800;
+}
+
+.NumeroOrden{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(146, 0, 102);
+    width: 30%;
+}
+.CargandoOrden{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-top: 15%;
+}
+
+
+.loader-wrapper {
+    width: 60px;
+    height: 60px;
+   }
+   
+   .loader {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #162534;
+    border-top-color: #4bc8eb;
+    border-bottom-color: #f13a8f;
+    border-radius: 50%;
+    animation: rotate0925 5s linear infinite;
+   }
+   
+   .loader-inner {
+    border-top-color: #36f372;
+    border-bottom-color: #fff;
+    animation-duration: 2.5s;
+   }
+   
+   @keyframes rotate0925 {
+    0% {
+     transform: scale(1) rotate(360deg);
+    }
+   
+    50% {
+     transform: scale(.8) rotate(-360deg);
+    }
+   
+    100% {
+     transform: scale(1) rotate(360deg);
+    }
+   }

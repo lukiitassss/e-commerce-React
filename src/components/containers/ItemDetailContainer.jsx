@@ -2,28 +2,21 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
-import { gFetch } from '../components/gFetch/gFetch'
-import Loading from '../components/Loading/Loading'
-import {CartContext} from '../context/CartContext'
-
+import { useContext } from 'react'
 
 import './StyleDetail.css'
+
+import Loading from '../Loading/Loading'
+import {CartContext} from '../../context/CartContext'
 import ItemCount from './ItemCount'
-import { useContext } from 'react'
 
 function ItemDetailContainer() {
   const {id} = useParams()//parametro de url
   const [producto,guardarProducto] = useState(null);
   const [loading,setLoading]= useState(true);
-  const [compra,setCompra] =useState(false);
-  const [productos,addItem,longitud] =useContext(CartContext)
+  const [compra,guardarCompra] =useState(false);
+  const [,agregarItem] =useContext(CartContext)
 
-  // useEffect(()=>{
-  // gFetch
-  //   .then(resolve=>guardarProducto(resolve.find(prod => prod.id ==id)))
-  //   .catch(reject =>console.log(reject))
-  //   .finally(()=>setLoading(handleBool))
-  // },[])
 
   useEffect(()=>{
     const db =getFirestore()
@@ -40,10 +33,9 @@ function ItemDetailContainer() {
   }
   
   const comprar = (cantidad )=>{
-    addItem(producto,cantidad)
-    setCompra(true)
+    agregarItem(producto,cantidad)
+    guardarCompra(true)
   }
-  console.log(productos);
 
 
   return(
@@ -62,14 +54,14 @@ function ItemDetailContainer() {
             
             {
             compra ? <div className='Compra'>
-                    <Link to = '/' ><button>seguir</button> </Link>
-                    <Link to = '/Cart' ><button>carrito</button> </Link>
+                    <Link to = '/' ><button className='Principal'>Seguir Comprando</button> </Link>
+                    <Link to = '/Cart' ><button className='Carrito'>Ir Al Carrito</button> </Link>
                     </div>: 
                     producto.stock > 0 ?
                        <ItemCount stock={producto.stock} add={comprar} className='Formulario'/> : 
                        <div className='Compra'>
-                        <Link to = '/' ><button>seguir</button> </Link>
-                        <Link to = '/Cart' ><button>carrito</button> </Link>
+                        <Link to = '/' ><button className='Principal'>Seguir Comprando</button> </Link>
+                        <Link to = '/Cart' ><button className='Carrito'>Ir Al Carrito</button> </Link>
                        </div>
             }
               <p className='Descripcion'>Descripcion{`

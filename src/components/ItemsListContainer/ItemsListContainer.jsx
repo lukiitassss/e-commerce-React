@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { gFetch } from "../gFetch/gFetch";
-import { collection, doc, getDoc, getDocs, getFirestore, query,where } from 'firebase/firestore'
+
+import { collection, getDocs, getFirestore, query,where } from 'firebase/firestore'
 import ItemList from "../ItemList/ItemList";
 import Loading from "../Loading/Loading"
 
@@ -13,23 +13,10 @@ const ItemsListContainer= ()=>{
   const {categoriaId} = useParams()
 
 
-  // useEffect(()=>{
-
-  //   if (categoriaId) {
-  //     gFetch
-  //     .then(resolve=>guardarProductos(resolve.filter(prod=>prod.categoria==categoriaId)))
-  //     .catch(reject =>console.log(reject))
-  //     .finally(()=>setLoading(false))
-  //   } else {
-  //     gFetch
-  //       .then(resolve=>guardarProductos(resolve))
-  //       .catch(reject =>console.log(reject))
-  //       .finally(()=>setLoading(false))
-  //   }
-
-  // },[categoriaId])
 
   useEffect(()=>{
+
+    
     if (categoriaId){
       const db =getFirestore()
       const queryCollection = collection(db,'Productos')

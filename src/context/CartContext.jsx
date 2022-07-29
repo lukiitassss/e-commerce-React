@@ -21,11 +21,16 @@ export  const CartProvider = ({children})=>{
         )
     }
 
-    const clear =()=>{//inicializamos el carrito
+
+
+    const limpiar =()=>{//inicializamos el carrito
         setProductos(estadoInicial)
-        console.log(productos);
+        setLong(0)
     }
 
+    const posicion=(prod)=>{
+        return(productos.indexOf(prod))
+    }
 
     const isInCart=(id) =>{//pasandole un id podremos ver si esta en el carrito
 
@@ -44,10 +49,14 @@ export  const CartProvider = ({children})=>{
         }
         else{
             const ubi = ubicacion(producto.id)
-            ubi.quantity += cantidad
-             
-             setProductos(productos)
-             setLong(long + cantidad)
+            const stock= ubi.quantity+cantidad
+
+            if (stock<=ubi.item.stock) {
+                ubi.quantity += cantidad
+                setProductos(productos)
+                setLong(long + cantidad)
+            } 
+            
              
         }
 
@@ -55,12 +64,12 @@ export  const CartProvider = ({children})=>{
  
     }
 
-    const removeItem= (itemId) =>{
-        if (isInCart(itemId)) {
-            const ubicacion = ubicacion(productos,itemId)
+    const quitarItem= (prod) =>{
+        if (isInCart(prod.item.id)) {
+            const ubicacion = posicion(prod)
             productos.splice(ubicacion,1)
             setProductos(productos)
-            console.log(productos);
+            setLong(long - prod.quantity)
             return true
         }
         else{
@@ -70,11 +79,10 @@ export  const CartProvider = ({children})=>{
     
 
 
-
     //4-devemos retornar este componente
     return(
         //si quiero pasar una props se debe llamar value
-        <CartContext.Provider value ={[productos,addItem,longitud]}>
+        <CartContext.Provider value ={[productos,addItem,longitud,quitarItem,limpiar]}>
             {/* 5- aca  va a pasarse props.children o bien childrens y seran todos lo que yo envuelva*/}
             {children}
         </CartContext.Provider>
